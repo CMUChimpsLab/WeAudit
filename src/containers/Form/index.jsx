@@ -116,6 +116,7 @@ class Form extends Component {
       return filtered.join(', ');
     };
     if (!prevState.submit && this.state.submit) {
+      console.log("submit")
       let arr = [this.state.audit];
       for (let i in this.state.questions) {
         let obj = this.state.questions[i];
@@ -471,7 +472,7 @@ class Form extends Component {
                             };
                             let capturing = chrome.tabs.captureVisibleTab();
                             capturing.then(onCaptured, onError);*/
-                            let tabs = await chrome.tabs.query({
+                            /*let tabs = await chrome.tabs.query({
                               currentWindow: true,
                               active: true,
                             });
@@ -479,7 +480,7 @@ class Form extends Component {
                             let res = chrome.tabs.sendMessage(activeTab.id, {
                               message: 'screenshot',
                             });
-                            window.close();
+                            window.close();*/
                           }}
                         >
                           Take Screenshot
@@ -499,8 +500,8 @@ class Form extends Component {
               className="e5479_23173"
               style={{}}
               onClick={async () => {
-                //this.setState({ submit: true });
-                let tabs = await chrome.tabs.query({
+                this.setState({ submit: true });
+                /*let tabs = await chrome.tabs.query({
                   currentWindow: true,
                   active: true,
                 });
@@ -508,7 +509,7 @@ class Form extends Component {
                 let res = chrome.tabs.sendMessage(activeTab.id, {
                   message: 'screenshot',
                 });
-                window.close();
+                window.close();*/
               }}
             >
               <span className="e5479_23174">Submit</span>
