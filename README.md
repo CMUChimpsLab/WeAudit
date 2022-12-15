@@ -88,6 +88,20 @@ IP addresses for admin login have been restricted to certain ranges only accessi
   * `128.2.0.0/16`
   * `128.237.0.0/16`
 
+### Accessing the Discourse Docker container
+
+The WeAudit forum is deployed on the Lightsail machine as a single Docker container. This is the standard deployment strategy recommended by the official [Discourse documentation](https://github.com/discourse/discourse/blob/main/docs/INSTALL-cloud.md).
+
+Some customization and inspection tasks (adding new plugins, updating to a newer Discourse version, checking PostgreSQL database content etc.) require the admin to enter the Discourse container.
+
+To do so, please 
+
+1. SSH into the Lightsail machine on the AWS console
+2. Change directory to `/var/discourse`
+3. Run `sudo ./launcher enter app`
+
+Now you are in the production WeAudit working directory. Please refer to the [official install guide](https://github.com/discourse/discourse/blob/main/docs/INSTALL.md) to understand the Discourse project structure and the avialable commands.
+
 ### Security
 
 #### Preventing User Spam for Sign-Up
