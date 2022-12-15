@@ -87,6 +87,16 @@ IP addresses for admin login have been restricted to certain ranges only accessi
 * Wired:
   * `128.2.0.0/16`
   * `128.237.0.0/16`
+  
+### Setting up local development environment
+
+To develop and test your plugins / themes locally:
+
+1. Follow [this guide](https://meta.discourse.org/tag/dev-install) to spin up a clean Discourse instance locally. 
+2. In the production WeAudit admin panel, check the enabled themes and plugins and reapply them in your local instance. This step replicates all of the cusomizations made on the production forum locally.
+3. Replicate the production admin settings locally as much as possible.
+
+The above steps should result in a close enough WeAudit clone on your local machine. Now you can start developing and testing your plugins / themes locally before applying them to the production WeAudit website.
 
 ### Accessing the Discourse Docker container
 
